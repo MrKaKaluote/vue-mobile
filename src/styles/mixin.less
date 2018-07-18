@@ -1,0 +1,228 @@
+@baseFontSize: 75;
+.px2rem(@name, @px) {
+  @name: @px / @baseFontSize * 1rem;
+}
+
+.flex(@a, @b, @c) {
+  flex: @a @b @c/@baseFontSize*1rem;
+}
+
+.b-radius(@px) {
+  border-radius: @px / @baseFontSize * 1rem;
+}
+
+.b-radius(@px) {
+  border-radius: @px / @baseFontSize * 1rem;
+}
+
+.h(@px) {
+  height: @px / @baseFontSize * 1rem;
+}
+
+.minh(@px) {
+  min-height: @px / @baseFontSize * 1rem;
+}
+
+.maxh(@px) {
+  max-height: @px / @baseFontSize * 1rem;
+}
+
+.w(@px) {
+  width: @px / @baseFontSize * 1rem;
+}
+
+.mt(@px) {
+  margin-top: @px / @baseFontSize * 1rem;
+}
+
+.mb(@px) {
+  margin-bottom: @px / @baseFontSize * 1rem;
+}
+
+.ml(@px) {
+  margin-left: @px / @baseFontSize * 1rem;
+}
+
+.mr(@px) {
+  margin-right: @px / @baseFontSize * 1rem;
+}
+
+.pt(@px) {
+  padding-top: @px / @baseFontSize * 1rem;
+}
+
+.pb(@px) {
+  padding-bottom: @px / @baseFontSize * 1rem;
+}
+
+.pl(@px) {
+  padding-left: @px / @baseFontSize * 1rem;
+}
+
+.pr(@px) {
+  padding-right: @px / @baseFontSize * 1rem;
+}
+
+.padding(@tbpx,@lrpx) {
+  padding: @tbpx / @baseFontSize * 1rem @lrpx / @baseFontSize * 1rem;
+}
+
+.padding(@top,@left,@bottom,@right) {
+  .pt(@top);
+  .pl(@left);
+  .pb(@bottom);
+  .pr(@right);
+}
+
+.padding-rl(@rightpx,@leftpx) {
+  padding: 0rem  @rightpx/@baseFontSize*1rem 0rem @leftpx/@baseFontSize*1rem;
+}
+
+.margin(@tbpx,@lrpx) {
+  margin: @tbpx / @baseFontSize * 1rem @lrpx / @baseFontSize * 1rem;
+}
+
+.margin(@top,@left,@bottom,@right) {
+  .mt(@top);
+  .ml(@left);
+  .mb(@bottom);
+  .mr(@right);
+}
+
+.border-1px(@color) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid @color;
+    content: ' ';
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+      -webkit-transform: scaleY(0.7);
+      transform: scaleY(0.7);
+    }
+  }
+}
+
+.border-right-1px(@px,@color) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    right: 1/@baseFontSize*1rem;;
+    bottom: 0;
+    width: @px/@baseFontSize*1rem;
+    top: 0;
+    background-color: @color;
+    content: ' ';
+  }
+}
+
+.border-left-1px(@px,@color) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 1/@baseFontSize*1rem;;
+    bottom: 0;
+    width: @px/@baseFontSize*1rem;
+    top: 0;
+    background-color: @color;
+    content: ' ';
+  }
+}
+
+.border-before-1px(@color) {
+  position: relative;
+  &:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-top: 1/@baseFontSize*1rem solid @color;
+    content: ' '
+  }
+}
+
+.border-npx(@color,@height) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: @height/@baseFontSize*1rem solid @color;
+    content: ' '
+  }
+}
+
+.border-none() {
+  &:after {
+    display: none;
+  }
+}
+
+.border-solid (@bw,@color) {
+  border: @bw/@baseFontSize*1rem solid @color;
+}
+
+.lh(@px) {
+  line-height: @px / @baseFontSize * 1rem;
+}
+
+.fs(@px) {
+  font-size: @px / @baseFontSize * 1rem;
+}
+
+.ellipsis2() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: 2;
+}
+
+.top(@px) {
+  top: @px / @baseFontSize * 1rem;
+}
+
+.left(@px) {
+  left: @px / @baseFontSize * 1rem;
+}
+
+.bottom(@px) {
+  bottom: @px / @baseFontSize * 1rem;
+}
+
+.right(@px) {
+  right: @px / @baseFontSize * 1rem;
+}
+
+.vertical(@px) {
+  vertical-align: @px / @baseFontSize * 1rem;
+}
+
+.ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.mh(@px) {
+  min-height: @px / @baseFontSize * 1rem;
+}
+
+.wordspacing(@px) {
+  word-spacing: @px / @baseFontSize * 1rem;
+}
