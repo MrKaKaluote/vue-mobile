@@ -11,7 +11,7 @@ export default {
   name: 'App',
   data() {
     return {
-      transitionName: 'slideleft'
+      transitionName: ''
     }
   },
   watch: {
@@ -27,7 +27,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import "~styles/variable.less";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,20 +44,23 @@ export default {
   right: 0;
   width: 100%;
   height: 100%;
+  background-color: @body-bg-color;;
   transition: all .5s ease;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
 }
 .slideleft-enter,
  .slideright-leave-active {
-  opacity: 0;
-  -webkit-transform: translate(100%, 0);
-  transform: translate(100%, 0);
+  opacity: 1;
+  transform: translate3d(90% 0, 0);
+  -webkit-transform: translate3d(90%, 0, 0);
+  -moz-transform: translate3d(90%, 0, 0);
 }
 .slideleft-leave-active,
 .slideright-enter {
-  opacity: 0;
-  -webkit-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
+ opacity: 1;
+ transform: translate3d(-90% 0, 0);
+ -webkit-transform: translate3d(-90%, 0, 0);
+ -moz-transform: translate3d(-90%, 0, 0);
 }
 </style>

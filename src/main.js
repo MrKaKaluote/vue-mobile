@@ -42,6 +42,14 @@ window.addEventListener('popstate', function(e) {
   }
 }, false)
 
+// app 修改状态栏颜色
+// document.addEventListener('plusready', function () {
+//   let System = window.plus.os.name
+//   if (System === 'iOS') {
+//     window.plus.navigator.setStatusBarBackground('#d81e06')
+//   }
+// })
+
 Vue.use(Mint)
 Vue.use(Vuex)
 Vue.config.productionTip = false

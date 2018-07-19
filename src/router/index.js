@@ -33,13 +33,31 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: (resolve) => require(['@/pages/HelloWorld'], resolve)
-    },
-    {
-      path: '/Home',
-      name: 'Home',
-      component: (resolve) => require(['@/pages/Home'], resolve)
+      name: 'index',
+      component: (resolve) => require(['@/pages/index'], resolve),
+      redirect: '/home',
+      children: [
+        {
+          path: '/home',
+          name: 'home',
+          component: (resolve) => require(['@/pages/index/home'], resolve)
+        },
+        {
+          path: '/story',
+          name: 'story',
+          component: (resolve) => require(['@/pages/index/story'], resolve)
+        },
+        {
+          path: '/footprints',
+          name: 'footprints',
+          component: (resolve) => require(['@/pages/index/footprints'], resolve)
+        },
+        {
+          path: '/day',
+          name: 'day',
+          component: (resolve) => require(['@/pages/index/day'], resolve)
+        }
+      ]
     },
     {
       path: '/Home/Detail',

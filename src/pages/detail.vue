@@ -1,16 +1,22 @@
 <template>
-  <div class="hello">
-    <h1 @click="tohome">{{ msg }}</h1>
+  <div>
+    <common-header :tittle="tittle" :showmore="true"></common-header>
+    <div class="page-content">
+      <h1 @click="tohome">详情页面</h1>
+    </div>
   </div>
 </template>
 
 <script>
+import commonHeader from 'common/common-header'
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js Detail'
+      tittle: '详情'
     }
+  },
+  components: {
+    commonHeader
   },
   methods: {
     tohome () {
@@ -21,19 +27,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style scoped lang="less">
+@import "~styles/index.less";
+@import "~styles/variable.less";
+
 </style>
