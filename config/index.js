@@ -4,15 +4,14 @@
 
 const path = require('path')
 
-module.exports = {
+let serverObj = {
   dev: {
 
     // Paths
+    env: require('./dev.env'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-        '/root/': { target: '' }
-    },
+    proxyTable: {},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -76,3 +75,18 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 }
+
+/**
+ * 依据命令执行不同的代理文件
+ * 全局变量在package.json里配置
+ */
+
+if (process.env.NODE_ENV === 'development') {
+  serverObj.dev.env = (process.env.DEV_ENV === 'local' ? require('./dev.env') : require('./dev.test.env'))
+  serverObj.dev.proxyTable = (process.env.DEV_ENV === 'local' ? require('./dev.proxy') : require('./dev.test.proxy'))
+}
+
+if (process.env.NODE_ENV === 'production') {
+  serverObj.build.env = (process.env.DEV_ENV === 'test' ? require('./prod.test.env') : require('./prod.env'))
+}
+module.exports = serverObj

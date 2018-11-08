@@ -5,13 +5,16 @@
   "author": "MrKaKaluote <gaosongai@foxmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "cross-env DEV_ENV=local NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev:test": "cross-env DEV_ENV=test NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "cross-env DEV_ENV=prod NODE_ENV=production node build/build.js",
+    "build:test": "cross-env DEV_ENV=test NODE_ENV=production node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
     "fastclick": "^1.0.6",
     "js-cookie": "^2.2.0",
     "less": "^3.7.1",
