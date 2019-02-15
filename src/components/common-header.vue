@@ -62,9 +62,9 @@ export default {
 @import "~styles/index.less";
 @import "~styles/variable.less";
 .header-box{
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   width: 100%;
   .h(100);
   .lh(100);
@@ -72,6 +72,7 @@ export default {
   color: @base-header-color;
   .fs(@base-header-size);
   display: flex;
+  z-index: 1;
   .left-icon{
     position: relative;
     flex: 1;

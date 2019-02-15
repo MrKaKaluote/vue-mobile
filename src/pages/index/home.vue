@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-box">
     <common-header :showinput="true" :showback="false"></common-header>
     <div class="page-content">
       <mt-button @click="todetail">home</mt-button>
@@ -60,4 +60,7 @@ export default {
 <style scoped lang="less">
 @import "~styles/index.less";
 @import "~styles/variable.less";
+.page-content{
+  .mb(98);
+}
 </style>

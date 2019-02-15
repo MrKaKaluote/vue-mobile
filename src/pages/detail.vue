@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="content-box">
     <common-header :tittle="tittle" :showmore="true"></common-header>
     <div class="page-content">
-      <h1 @click="add">详情页面</h1>
       <h1>{{data}}</h1>
       <h1>{{newdata}}</h1>
     </div>

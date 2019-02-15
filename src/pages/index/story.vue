@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="content-box">
     <common-header :tittle="tittle" :showback="false"></common-header>
       <div class="page-content">
-    <mt-button @click="todetail">story</mt-button>
+        <mt-button @click="todetail">story</mt-button>
     </div>
   </div>
 </template>
@@ -44,10 +44,7 @@ export default {
 <style scoped lang="less">
 @import "~styles/index.less";
 @import "~styles/variable.less";
-.hello{
-  h1{
-    color: red;
-    .fs(38);
-  }
+.page-content{
+  .mb(98);
 }
 </style>
