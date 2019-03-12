@@ -3,9 +3,8 @@
  * @Author: gaosong
  * @LastEditors: gaosong
  * @Date: 2019-03-12 10:35:23
- * @LastEditTime: 2019-03-12 14:53:56
+ * @LastEditTime: 2019-03-12 15:56:32
  */
-
 
 let userInfo = {
   code: 200,
