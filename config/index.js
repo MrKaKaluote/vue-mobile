@@ -82,8 +82,16 @@ let serverObj = {
  */
 
 if (process.env.NODE_ENV === 'development') {
-  serverObj.dev.env = (process.env.DEV_ENV === 'local' ? require('./dev.env') : require('./dev.test.env'))
-  serverObj.dev.proxyTable = (process.env.DEV_ENV === 'local' ? require('./dev.proxy') : require('./dev.test.proxy'))
+  if (process.env.DEV_ENV === 'local') {
+    serverObj.dev.env = require('./dev.env')
+    serverObj.dev.proxyTable = require('./dev.proxy')
+  } else if (process.env.DEV_ENV === 'test') {
+    serverObj.dev.env = require('./dev.test.env')
+    serverObj.dev.proxyTable = require('./dev.test.proxy')
+  } else {
+    serverObj.dev.env = require('./dev.mock.env')
+    serverObj.dev.proxyTable = require('./dev.proxy')
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {

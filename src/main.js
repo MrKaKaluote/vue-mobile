@@ -10,6 +10,9 @@ import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import FastClick from 'fastclick'
 import '../static/js/flexible.js'
+if (process.env.MOCK) {    // 判断是否为mock模式
+  require('./mock/index.js')
+}
 /**
 *监听浏览器点击返回前进操作动画
 *浏览器端使用需要注意路由path的创建，二级应该在一级的基础上添加
